@@ -1,6 +1,7 @@
 package com.dhoouglas.dslist.dto;
 
 import com.dhoouglas.dslist.entities.Game;
+import com.dhoouglas.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 	private Long id;
@@ -20,6 +21,15 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projecion) {
+		super();
+		id = projecion.getId();
+		title = projecion.getTitle();
+		year = projecion.getYear();
+		imgUrl = projecion.getImgUrl();
+		shortDescription = projecion.getShortDescription();
 	}
 
 	public Long getId() {
